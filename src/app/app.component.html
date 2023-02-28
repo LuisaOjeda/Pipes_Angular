@@ -12,13 +12,166 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr> <!--MAYUSCULA-->
           <td>{{nombre}} </td>
           <td>Uppercase</td>
           <td>{{nombre | uppercase}} </td>
         </tr>
 
-        <tr>
+        <tr> <!--MINUSCULA-->
+          <td>{{nombre}} </td>
+          <td>lowercase</td>
+          <td>{{nombre | lowercase}} </td>
+        </tr>
+
+        <tr> <!-- Slice -> Permite cortar un texto, array u otras cosas -->
+          <!-- Le estoy diciendo que me borre las tres primeras posiciones -->
+          <td>{{nombre}} </td>
+          <td>Slice:3</td>
+          <td>{{nombre | slice:3}} </td>
+        </tr>
+
+        <tr> <!-- Slice -> Permite cortar un texto, array u otras cosas -->
+          <!-- Le estoy diciendo que me muestre las primeras 3 letras -->
+          <td>{{nombre}} </td>
+          <td>Slice:0:3</td>
+          <td>{{nombre | slice:0:3}} </td>
+        </tr>
+
+        <tr> <!-- Slice -> Permite cortar un texto, array u otras cosas -->
+          <!-- Le estoy diciendo que me muestre del 1 al 5 -->
+          <td>{{array}} </td>
+          <td>Slice:1:5</td>
+          <td>{{nombre | slice:1:5}} </td>
+        </tr>
+
+        <tr> <!-- Decimal  -->
+          <td>{{PI}} </td>
+          <td>Decimal - Number</td>
+          <td>{{PI | number}} </td>
+        </tr>
+
+        <tr> <!-- Decimal -> Pero aca le digo que quiero el num entero sin decimales-->
+          <td>{{PI}} </td>
+          <td>Decimal - Number:'1.0-0'</td>
+          <td>{{PI | number:'1.0-0'}} </td>
+        </tr>
+
+        <tr> <!-- Decimal -> Pero si necesito ver 3 posiciones -->
+          <td>{{PI}} </td>
+          <td>Decimal - Number:'3.0-0'</td>
+          <td>{{PI | number:'3.0-0'}} </td>
+        </tr>
+
+        <tr> <!-- Decimal -> Pero si necesito 2 decimales -->
+          <td>{{PI}} </td>
+          <td>Decimal - Number:'.0-2'</td>
+          <td>{{PI | number:'.0-2'}} </td>
+        </tr>
+
+        <tr> <!-- Porcentaje -->
+          <td>{{porcentaje}} </td>
+          <td>percent</td>
+          <td>{{porcentaje | percent }} </td>
+        </tr>
+
+        <tr> <!-- Porcentaje -> Pero le digo que necesito 2 posiciones enteras y 2 decimales -->
+          <td>{{porcentaje}} </td>
+          <td>percent:'2.2-2'</td>
+          <td>{{porcentaje | percent:'2.2-2' }} </td>
+        </tr>
+
+        <tr> <!-- Currency -->
+          <td>{{salario}} </td>
+          <td>Currency</td>
+          <td>{{salario | currency}} </td>
+        </tr>
+
+        <tr> <!-- Currency - especificando la moneda del pais actual - COP -->
+          <td>{{salario}} </td>
+          <td>Currency</td>
+          <td>{{salario | currency:'COP'}} </td>
+        </tr>
+
+        <tr> <!-- Currency - especificando la moneda del pais actual SIN DECIMALES - COP -->
+          <td>{{salario}} </td>
+          <td>Currency</td>
+          <td>{{salario | currency:'COP':'symbol':'.0-0'}} </td>
+        </tr>
+
+        <tr> <!-- Async -->
+          <td>{{valorPromesa}} </td>
+          <td>Async</td>
+          <td>{{valorPromesa | async }} </td>
+        </tr>
+
+        <tr> <!-- Date -->
+          <td>{{fecha}} </td>
+          <td>Date</td>
+          <td>{{fecha | date }} </td>
+        </tr>
+
+        <tr> <!-- Date tomando el Medium-->
+          <td>{{fecha}} </td>
+          <td>Date:'medium'</td>
+          <td>{{fecha | date:'medium' }} </td>
+        </tr>
+
+        <tr> <!-- Date tomando el Short-->
+          <td>{{fecha}} </td>
+          <td>Date:'short'</td>
+          <td>{{fecha | date:'short' }} </td>
+        </tr>
+
+        <tr> <!-- Date - config personalizada-->
+          <td>{{fecha}} </td>
+          <td>Date:'MMMM -dd'</td>
+          <td>{{fecha | date:'MMMM -dd' }} </td>
+        </tr>
+
+        <tr> <!-- Pipes personalizados -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
+          <td>{{nombre}} </td>
+          <td>Uppercase</td>
+          <td>{{nombre | uppercase}} </td>
+        </tr>
+
+        <tr> <!-- -->
           <td>{{nombre}} </td>
           <td>Uppercase</td>
           <td>{{nombre | uppercase}} </td>
@@ -26,5 +179,22 @@
 
       </tbody>
     </table>
+
+    <!-- Otra funcion que tiene el pipe Slice -->
+    <h4>Slice</h4>
+    <ul>
+      <li *ngFor="let item of array | slice:5:20">{{item}} </li>
+    </ul>
+
+    <!-- JSON -->
+    <h4>JSON</h4>
+    <hr>
+    <div class="row mb-5">
+      <div class="col">
+        <pre>
+          {{heroe | json}}
+        </pre>
+      </div>
+    </div>
   </div>
 </div>
